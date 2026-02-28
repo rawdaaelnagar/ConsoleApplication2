@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+long long findMax(vector<long long> arr, int index) {
+    if (index == 0) {
+        return arr[0];
+    }
+    
+    return max(arr[index], findMax(arr, index - 1));
+}
+int main() {
+    int n;
+    cin >> n;
+    
+    vector<long long> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    
+    cout << findMax(arr, n - 1) << endl;
+    return 0;
+}
