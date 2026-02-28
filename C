@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int digits(int n){
+
+        if(n==0){
+            return 0;}
+    string s;
+    cin>>s ;
+    int x=s.size();
+    for(int i=0;i<x;i++){
+    cout<<s[i] ;
+    if(i!=(x-1)){
+        cout<<" ";
+    }
+    }
+cout<<endl;
+        return digits(n-1);
+}
+int main()
+{
+    int n ;
+cin>>n ;
+    digits(n);
+
+    return 0;
+}
